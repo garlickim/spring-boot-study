@@ -34,7 +34,7 @@ public class Application
 
     // embedded tomcat 사용시, http와 https 둘다 사용하기 위해
     // https 설정은 properties에
-    // https 설정은 아래 ServletWebServerFactory에 설정하여 Bean으로 등록한다.
+    // http 설정은 아래 ServletWebServerFactory에 설정하여 Bean으로 등록한다.
     @Bean
     public ServletWebServerFactory servletContainer()
     {
