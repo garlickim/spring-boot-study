@@ -15,7 +15,7 @@ server.port=8443
 * http 설정은 Java 에서 처리 (ServletWebServerFactory에 설정하여 Bean으로 등록)
 
 ~~~java
-@Bean
+    @Bean
     public ServletWebServerFactory servletContainer()
     {
         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
@@ -31,3 +31,15 @@ server.port=8443
         return connector;
     }
 ~~~
+<br>
+  
+
+## HTTP2를 사용하는 방법
+
+~~~properties
+server.http2.enable=true
+~~~
+
+* HTTP2는 SSL이 적용된 상태에서만 가능하다.
+* Undertow 사용시 별다른 설정은 필요가 없다.  
+* Tomcat 8.5.x 버전 사용시 별도의 설정이 필요하므로, Tomcat 9.x 과 JDK 9를 사용하면 별도의 설정이 필요없다.  
